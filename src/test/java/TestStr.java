@@ -1,3 +1,6 @@
+import static org.hamcrest.CoreMatchers.describedAs;
+import static org.hamcrest.CoreMatchers.instanceOf;
+
 import java.util.LinkedList;
 
 /**
@@ -54,6 +57,19 @@ public class TestStr {
 		}
 		return queue.size() == 0;
 	}
+	
+	
+	/**
+	 * 求最大公约数
+	 * 欧几里得算法
+	 */
+	public static int gcd(int a, int b){
+		if(b == 0){
+			return a;
+		}
+		return gcd(b, a % b);
+	}
+	
 
 	/**
 	 * @param args
@@ -65,6 +81,8 @@ public class TestStr {
         System.out.println(check(str1));
         System.out.println(check(str2));
         System.out.println(check(str3));
+        
+        System.out.println(gcd(24, 16));
 	}
 
 }
